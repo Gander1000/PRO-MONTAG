@@ -46,7 +46,7 @@ const items = [
 const Heder = () => {
   const location = useLocation();
   const activeIndex = items.findIndex(
-    (item) => item.to && location.pathname.endsWith(item.to),
+    (item) => item.to && location.pathname.startsWith(item.to),
   );
 
   return (
