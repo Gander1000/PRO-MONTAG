@@ -2,7 +2,7 @@ import scss from "./Applications.module.scss";
 import Icon from "../../assets/icon.svg";
 import Men from "../../assets/Photoroom.svg";
 import { Link } from "react-router-dom";
-import paper from "../../assets/img.svg";
+import paper from "../../assets/peper.svg";
 
 function Applications() {
   return (
