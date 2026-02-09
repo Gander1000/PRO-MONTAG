@@ -1,0 +1,230 @@
+.Applications {
+  background-color: #ececec;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-top: 30px;
+  padding-left: 0;
+  padding-bottom: 0;
+
+  @media (max-width: 600px) {
+    padding-left: 30px;
+    padding-bottom: 30px;
+  }
+
+  .contai_top {
+    background-color: #ffffff;
+    width: 58.8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 50px;
+    margin: 30px;
+    margin-top: 0;
+    margin-left: 0;
+    border-radius: 20px;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      height: 25vw;
+
+      @media (max-width: 1400px) {
+        height: 10vw;
+      }
+
+      @media (max-width: 1000px) {
+        height: 20vw;
+      }
+
+      @media (max-width: 800px) {
+        height: 30vw;
+      }
+
+      @media (max-width: 360px) {
+        height: 40vw;
+        align-items: center;
+      }
+
+      h2 {
+        padding-bottom: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #1c1d21;
+      }
+
+      .cart {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        .title {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .top {
+            display: flex;
+            width: 52vw;
+            justify-content: space-between;
+
+            h3 {
+              font-size: 14px;
+              font-weight: 700;
+            }
+          }
+
+          .bottom {
+            display: flex;
+            justify-content: space-between;
+
+            @media (max-width: 360px) {
+              justify-content: end;
+            }
+
+            h4 {
+              font-size: 14px;
+              font-weight: 400;
+              color: #1c1d21;
+            }
+
+            span {
+              font-size: 14px;
+              font-weight: 700;
+              color: #61dc81;
+            }
+          }
+        }
+      }
+    }
+
+    button {
+      padding: 15px 40px;
+      border: none;
+      border: solid 2px #c30000;
+      background-color: white;
+      color: #c30000;
+      border-radius: 10px;
+      transition: 0.2s;
+
+      &:hover {
+        background-color: #c30000;
+        color: white;
+      }
+    }
+  }
+
+  .contai_bottom {
+    display: flex;
+    align-items: start;
+    gap: 30px;
+
+    @media (max-width: 1400px) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      padding: 30px;
+      padding-bottom: 0;
+      border-radius: 20px;
+      width: 27.8vw;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #1c1d21;
+      box-shadow: 0px 3px 0px 0px rgb(181, 181, 181);
+      height: 20vw;
+      position: relative;
+
+      @media (max-width: 1400px) {
+        width: 61.9vw;
+        height: 18vw;
+      }
+
+      @media (max-width: 1200px) {
+        width: 62.3vw;
+      }
+
+      @media (max-width: 1000px) {
+        width: 62.9vw;
+        height: 22vw;
+      }
+
+      @media (max-width: 700px) {
+        height: 32vw;
+        width: 65vw;
+      }
+
+      @media (max-width: 600px) {
+        width: 67vw;
+      }
+
+      @media (max-width: 360px) {
+        width: 70vw;
+      }
+
+      img {
+        width: 22.5vw;
+        padding-left: 7.4vw;
+        display: flex;
+
+        @media (max-width: 1400px) {
+          padding-left: 41.8vw;
+        }
+
+        @media (max-width: 1000px) {
+          padding-left: 43.4vw;
+        }
+
+        @media (max-width: 700px) {
+          padding-left: 46.9vw;
+        }
+
+        @media (max-width: 600px) {
+          display: none;
+        }
+      }
+
+      .men {
+        width: 23.1vw;
+        object-fit: cover;
+        display: flex;
+
+        @media (max-width: 1400px) {
+          width: 20.3vw;
+        }
+
+        @media (max-width: 1150px) {
+          width: 20vw;
+        }
+
+        @media (max-width: 1000px) {
+          width: 24.7vw;
+        }
+
+        @media (max-width: 700px) {
+          padding-left: 35vw;
+          padding-top: 4.4vw;
+          width: 30vw;
+        }
+
+        @media (max-width: 600px) {
+          display: none;
+        }
+      }
+
+      .peper {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+}

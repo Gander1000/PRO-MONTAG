@@ -1,0 +1,14 @@
+.Profil_Date{
+    display: flex;
+    background-color: #ececec;
+    gap: 30px;
+    height: 988px;
+    padding: 0;
+    margin: 0;
+
+    @media (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+

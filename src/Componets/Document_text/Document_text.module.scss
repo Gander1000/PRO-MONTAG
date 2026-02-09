@@ -1,0 +1,59 @@
+.Document_text {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+
+  .top_button {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-decoration: none;
+
+    button {
+      padding: 13px 25px;
+      color: #c30000;
+      border: none;
+      border: solid 2px #c30000;
+      border-radius: 10px;
+      transition: 0.2s;
+      width: auto;
+
+      &:hover {
+        color: white;
+        background-color: #c30000;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+
+    .white {
+      background: #ffffff;
+    }
+
+    .gray {
+      background: #f1f9fe;
+    }
+
+    .cart {
+      display: flex;
+      align-items: center;
+
+      h2 {
+        font-size: 20px;
+        font-weight: 700;
+        padding: 15.1px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #6f6f79;
+      }
+    }
+  }
+}

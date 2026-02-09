@@ -1,0 +1,163 @@
+.Aftoris {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .contai_image {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .logo {
+      position: absolute;
+      top: 1.5vw;
+      left: 5vw;
+
+      @media (max-width: 1345px) {
+        display: none;
+      }
+    }
+
+    .Cor {
+      width: 50vw;
+      display: flex;
+
+      @media (max-width: 1345px) {
+        display: none;
+      }
+    }
+  }
+
+  .contai_Title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vw;
+    position: relative;
+    width: 50%;
+    padding-top: 30px;
+
+    @media (max-width: 1345px) {
+      width: 100%;
+    }
+
+    @media (max-width: 800px) {
+      gap: 10vw;
+    }
+
+    @media (max-width: 400px) {
+      padding: 0 10px;
+      padding-top: 30px;
+    }
+
+    .Registr {
+      display: flex;
+      align-items: start;
+      justify-content: end;
+      width: 70%;
+      height: 10vw;
+
+      img {
+        width: 55px;
+        display: none;
+
+        @media (max-width: 1345px) {
+          display: flex;
+        }
+      }
+
+      @media (max-width: 1345px) {
+        width: 80%;
+        padding: 10px;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      a {
+        padding: 10px 25px;
+        border: none;
+        border: solid 1px #c30000;
+        color: #c30000;
+        background-color: #ffff;
+        font-size: 15px;
+        border-radius: 7px;
+        transition: 0.2s;
+        text-decoration: none;
+
+        &:hover {
+          background-color: #c30000;
+          color: #ffff;
+        }
+      }
+    }
+
+    h2 {
+      text-align: center;
+      padding-bottom: 5vw;
+      font-size: 40px;
+      font-weight: bold;
+      color: #575757;
+
+      span {
+        color: #f10000;
+      }
+
+      @media (max-width: 800px) {
+        font-size: 30px;
+      }
+
+      @media (max-width: 370px) {
+        font-size: 20px;
+      }
+    }
+
+    .contai_input {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      p {
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      input {
+        padding: 25px;
+        padding-right: 13vw;
+        background-color: #f5f5fa66;
+        border: none;
+        outline: none;
+      }
+
+      input::placeholder {
+        padding-right: 22vw;
+        padding-bottom: 15px;
+        color: black;
+        font-size: 15px;
+        font-weight: 600;
+        opacity: 2;
+        border-bottom: solid 2px #56657740;
+
+        @media (max-width: 1345px) {
+        }
+      }
+    }
+
+    button {
+      padding: 13px 60px;
+      border: solid 1px #c30000;
+      color: #c30000;
+      border-radius: 5px;
+      font-size: 15px;
+      margin-bottom: 10vw;
+      background-color: #ffff;
+      transition: 0.2s;
+
+      &:hover {
+        background-color: #c30000;
+        color: #ffff;
+      }
+    }
+  }
+}
