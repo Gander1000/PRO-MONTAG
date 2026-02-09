@@ -33,11 +33,11 @@ function Applications() {
       <div className={scss.contai_bottom}>
         <Link to="">
           <h1>Добавить новую заявку</h1>
-          <img className={scss.men} src={Men} alt=""  />
+          <img className={scss.men} src={Men} alt="" />
         </Link>
         <Link to="">
           <h1>Скачать прайс-лист</h1>
-          <img className={scss.peper} src={paper} alt=""  />
+          <img className={scss.peper} src={paper} alt="" />
         </Link>
       </div>
     </section>
