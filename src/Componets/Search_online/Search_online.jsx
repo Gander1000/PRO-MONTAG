@@ -1,5 +1,5 @@
 import scss from "./Search_online.module.scss";
-import Icon from "../../assets/Icon.svg";
+import Icon from "../../assets/icon.svg";
 import { Link } from "react-router-dom";
 import Search_outline from "../../assets/search-outline.svg";
 

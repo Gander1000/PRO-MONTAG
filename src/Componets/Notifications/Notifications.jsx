@@ -1,6 +1,6 @@
 import scss from "./Notifications.module.scss";
 import { Link } from "react-router-dom";
-import Icon from "../../assets/Icon.svg";
+import Icon from "../../assets/icon.svg";
 
 function Notifications() {
   return (

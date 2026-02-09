@@ -1,5 +1,5 @@
 import scss from "./Union.module.scss";
-import Icon from "../../assets/Icon.svg";
+import Icon from "../../assets/icon.svg";
 import { Link } from "react-router-dom";
 
 function Union() {
