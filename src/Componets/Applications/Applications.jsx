@@ -1,6 +1,6 @@
 import scss from "./Applications.module.scss";
 import Icon from "../../assets/icon.svg";
-import Men from "../../assets/srednii-snimok-arhitektora-i-inzenera-po-nadzoru-za-stroitel-stvom-Photoroom 1.svg";
+import Men from "../../assets/Photoroom.svg";
 import { Link } from "react-router-dom";
 import paper from "../../assets/img.svg";
 
