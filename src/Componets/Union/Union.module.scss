@@ -3,6 +3,22 @@
   display: flex;
   width: 100%;
 
+  @media (max-width: 1280px) {
+    height: 100vw;
+  }
+
+  @media (max-width: 850px) {
+    height: 150vw;
+  }
+
+  @media (max-width: 620px) {
+    height: 200vw;
+  }
+
+  @media (max-width: 480px) {
+    height: 250vw;
+  }
+
   .contai_top {
     background-color: #ffffff;
     display: flex;
@@ -13,6 +29,18 @@
     width: 100%;
     height: 55vw;
     border-radius: 20px;
+
+    @media (max-width: 850px) {
+      height: 130vw;
+    }
+    
+    @media (max-width: 620px) {
+      height: 170vw;
+    }
+
+    @media (max-width: 480px) {
+    height: 210vw;
+    }
 
     .container {
       display: flex;

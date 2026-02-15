@@ -10,6 +10,22 @@
   height: auto;
   min-height: 67.8vw;
 
+  @media (max-width: 1280px) {
+    height: 100vw;
+  }
+
+  @media (max-width: 850px) {
+    height: 150vw;
+  }
+
+  @media (max-width: 620px) {
+    height: 200vw;
+  }
+
+  @media (max-width: 480px) {
+    height: 250vw;
+  }
+
   h2 {
     font-size: 18px;
     font-weight: 700;

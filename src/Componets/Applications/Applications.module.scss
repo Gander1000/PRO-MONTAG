@@ -5,7 +5,11 @@
   justify-content: start;
   padding-top: 30px;
   padding-left: 0;
-  padding-bottom: 0;
+  padding-bottom: 5vw;
+
+  @media (max-width: 1020px) {
+    height: 200vw;
+  }
 
   @media (max-width: 600px) {
     padding-left: 30px;
