@@ -1,15 +1,16 @@
 .Union_Profil {
   background-color: #ececec;
   display: flex;
-  padding-left: 2.8vw;
+  height: 90vh;
+  padding: 30px;
+  width: 100%;
 
   .container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding: 3vw 3.8vw;
-    width: 82.8vw;
-    height: 55vw;
+    gap: 30px;
+    width: 100%;
+    height: 104%;
 
     a {
       text-decoration: none;
@@ -18,11 +19,12 @@
       gap: 5px;
       font-size: 18px;
       color: #566577;
+      font-family: "Lato", 400;
     }
 
     .contai_top {
       display: flex;
-      gap: 20px;
+      gap: 30px;
 
       .title {
         display: flex;
@@ -30,7 +32,7 @@
         gap: 30px;
         background-color: white;
         padding: 30px;
-        width: 24.9vw;
+        width: 79.8vh;
         border-radius: 10px;
 
         .top_title {
@@ -44,11 +46,13 @@
             gap: 5px;
             font-size: 20px;
             font-weight: 700;
+            font-family: "Lato", 700;
 
             span {
               font-size: 14px;
               color: #8181a5;
               font-weight: 400;
+              font-family: "Lato", 400;
             }
           }
 
@@ -64,6 +68,7 @@
               font-size: 12px;
               font-weight: 400;
               color: #8181a5;
+              font-family: "Lato", 400;
             }
           }
         }
@@ -83,12 +88,12 @@
             padding: 10px 20px;
             background-color: #f5f5fa66;
             border-radius: 10px;
-            margin-bottom: 10px;
 
             span {
               font-size: 14px;
               color: #8181a5;
               font-weight: 400;
+              font-family: "Lato", 400;
             }
           }
 
@@ -102,11 +107,13 @@
             padding: 10px 20px;
             background-color: #f5f5fa66;
             border-radius: 10px;
+            font-family: "Lato", 700;
 
             span {
               font-size: 14px;
               color: #8181a5;
               font-weight: 400;
+              font-family: "Lato", 400;
             }
           }
         }
@@ -115,11 +122,11 @@
       .title_rght {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 30px;
 
         .top_dan {
           display: flex;
-          gap: 20px;
+          gap: 30px;
 
           .contai_mes {
             display: flex;
@@ -130,17 +137,6 @@
             padding: 30px;
             border-radius: 10px;
 
-            @media (max-width: 480px) {
-              p {
-                display: flex;
-                font-size: 8px;
-
-                img {
-                  display: none;
-                }
-              }
-            }
-
             .contai_dan {
               display: flex;
               justify-content: space-between;
@@ -149,6 +145,7 @@
                 font-size: 20px;
                 font-weight: 700;
                 color: #1c1d21;
+                font-family: "Lato", 700;
               }
 
               .contai_p {
@@ -163,6 +160,7 @@
                   font-size: 12px;
                   font-weight: 400;
                   color: #8181a5;
+                  font-family: "Lato", 400;
                 }
               }
             }
@@ -183,17 +181,20 @@
               border-radius: 10px;
               width: 20vw;
               padding: 20px;
+              font-family: "Lato", 700;
 
               .uslug {
                 font-size: 14px;
                 color: #61d0dc;
                 font-weight: 700;
+                font-family: "Lato", 700;
               }
 
               span {
                 font-size: 12px;
                 color: #8181a5;
                 font-weight: 400;
+                font-family: "Lato", 400;
               }
             }
           }
@@ -206,17 +207,18 @@
           padding: 30px;
           background-color: white;
           border-radius: 10px;
+          height: 14.7vh;
 
           h1 {
             font-size: 14px;
             font-weight: 700;
             color: #1c1d21;
+            font-family: "Lato", 700;
           }
 
           input {
             border: none;
             outline: none;
-            padding-bottom: 7vw;
           }
         }
       }
@@ -224,7 +226,7 @@
 
     .contai_buttom {
       display: flex;
-      gap: 20px;
+      gap: 30px;
 
       .bottom_left {
         display: flex;
@@ -233,12 +235,14 @@
         background-color: white;
         padding: 30px 37px;
         border-radius: 10px;
-        width: 24vw;
+        width: 78.3vh;
+        height: 30.7vh;
 
         h1 {
           font-size: 20px;
           font-weight: 700;
           color: #1c1d21;
+          font-family: "Lato", 700;
         }
 
         a {
@@ -246,17 +250,19 @@
           font-weight: 400;
           color: #8181a5;
           text-decoration: underline;
+          font-family: "Lato", 400;
         }
 
         .contai_fail {
           display: flex;
           align-items: center;
-          gap: 1vw;
+          justify-content: space-between;
 
           a {
             background-color: #f5f5fa66;
             padding: 10px;
             border-radius: 5px;
+            font-family: "Lato", 400;
           }
         }
       }
@@ -268,8 +274,7 @@
         justify-content: center;
         background-color: white;
         border-radius: 10px;
-        padding: 10vw;
-        width: 30.8vw;
+        width: 104.9vh;
 
         h1 {
           text-align: center;
@@ -277,131 +282,9 @@
           color: #8181a5;
           font-weight: 100;
           cursor: pointer;
+          font-family: "Lato", 100;
         }
       }
     }
-  }
-}
-
-@media (max-width: 1500px) {
-  .Union_Profil {
-    padding-left: 1.5vw;
-
-    .container {
-      width: auto;
-      height: auto;
-    }
-  }
-}
-
-@media (max-width: 1200px) {
-  .contai_top {
-    flex-direction: column;
-  }
-
-  .title,
-  .bottom_left {
-    width: auto !important;
-  }
-
-  .title_rght {
-    width: auto;
-  }
-
-  .top_dan {
-    flex-direction: column;
-  }
-
-  .contai_mes,
-  .contai_date h2 {
-    width: auto !important;
-    gap: 20px;
-  }
-
-  .bottom_rght {
-    width: auto !important;
-    padding: 5vw;
-  }
-}
-
-@media (max-width: 992px) {
-  .contai_buttom {
-    flex-direction: column;
-  }
-
-  .bottom_left,
-  .bottom_rght {
-    width: auto !important;
-  }
-
-  .bottom_rght {
-    padding: 6vw;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 20px;
-  }
-
-  .title {
-    padding: 20px;
-  }
-
-  .top_title {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-
-  .contai_fail {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  input {
-    padding-bottom: 30vw;
-  }
-}
-
-@media (max-width: 480px) {
-  .contai_top {
-    flex-direction: column;
-    text-align: center;
-  }
-  h1 {
-    font-size: 16px !important;
-  }
-
-  h2 {
-    font-size: 13px !important;
-  }
-
-  a {
-    font-size: 12px;
-  }
-
-  .bottom_rght {
-    padding: 40px 20px;
-  }
-}
-
-@media (max-width: 360px) {
-  .container {
-    padding: 15px;
-  }
-
-  .title,
-  .bottom_left,
-  .bottom_rght {
-    padding: 15px;
-  }
-
-  h1 {
-    font-size: 14px !important;
-  }
-
-  h2 {
-    font-size: 12px !important;
   }
 }

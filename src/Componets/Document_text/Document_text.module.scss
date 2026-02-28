@@ -1,8 +1,10 @@
 .Document_text {
-  padding: 50px;
+  padding: 30px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
+  height: 95.6vh;
   width: 100%;
 
   .top_button {
@@ -19,6 +21,7 @@
       border-radius: 10px;
       transition: 0.2s;
       width: auto;
+      font-family: "Lato", 400;
 
       &:hover {
         color: white;
@@ -31,6 +34,8 @@
     display: flex;
     flex-direction: column;
     width: auto;
+    height: 100vh;
+    overflow-y: auto;
 
     .white {
       background: #ffffff;
@@ -53,6 +58,7 @@
         align-items: center;
         justify-content: space-between;
         color: #6f6f79;
+        font-family: "Lato", 700;
       }
     }
   }

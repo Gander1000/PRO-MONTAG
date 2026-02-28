@@ -14,49 +14,57 @@ const Registr = () => {
   return (
     <section className={scss.Registr}>
       <div className={scss.contai_image}>
-        <img className={scss.logo} src={Logo} alt="" width={60} />
         <img className={scss.Cor} src={Cor} alt="" />
       </div>
       <div className={scss.contai_Title}>
         <div className={scss.Aftoris}>
-          <img src={Logo} alt="" />
-          <Link to="/">Авторизация</Link>
+          <Link to="/">Регистрация</Link>
         </div>
         <h2>
           Добро пожаловать в службу <br /> <span>сервиса PRO Монтаж.</span>
         </h2>
         <div className={scss.contai_input}>
-          <p>Регистрация</p>
-          <input
-            value={contact_phone}
-            onChange={(e) => setContact_phone(e.target.value)}
-            type="text"
-            placeholder="Контактный телефон"
-          />
-          <input
-            value={managers_name}
-            onChange={(e) => setManagers_name(e.target.value)}
-            type="text"
-            placeholder="ФИО менеджера"
-          />
-          <input
-            value={namestor}
-            onChange={(e) => setNamestor(e.target.value)}
-            type="text"
-            placeholder="Название магазина"
-          />
-          <input
-            value={emeil}
-            onChange={(e) => setEleil(e.target.value)}
-            type="Emeil"
-            placeholder="Email"
-          />
-          <input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder="Пароль"
-          />
+          <p>Авторизация</p>
+          <div className={scss.contai_value}>
+            <input
+              value={emeil}
+              onChange={(e) => setEleil(e.target.value)}
+              type="email"
+              placeholder="Название магазина"
+            />
+          </div>
+          <div className={scss.contai_value}>
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="ФИО менеджера"
+            />
+          </div>
+          <div className={scss.contai_value}>
+            <input
+              value={namestor}
+              onChange={(e) => setNamestor(e.target.value)}
+              type="password"
+              placeholder="Контактный телефон"
+            />
+          </div>
+          <div className={scss.contai_value}>
+            <input
+              value={managers_name}
+              onChange={(e) => setManagers_name(e.target.value)}
+              type="password"
+              placeholder="Email"
+            />
+          </div>
+          <div className={scss.contai_value}>
+            <input
+              value={contact_phone}
+              onChange={(e) => setContact_phone(e.target.value)}
+              type="password"
+              placeholder="Пароль"
+            />
+          </div>
         </div>
         <Link to="/Home_Date/Profil_Date">
           <button>Войти</button>

@@ -2,20 +2,15 @@
   display: flex;
   flex-direction: column;
   background-color: #ececec;
-
-  @media (max-width: 480px) {
-    padding: 20px 0;
-  }
+  height: 100vh;
+  width: 100%;
 
   .container {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 3vw 4vw;
-    padding-top: 1.5vw;
-    padding-bottom: 1.5vw;
-    width: 82.8vw;
-    height: auto;
+    padding: 30px;
+    height: 100vh;
 
     a {
       text-decoration: none;
@@ -24,24 +19,27 @@
       gap: 5px;
       font-size: 18px;
       color: #566577;
+      font-family: "Lato", 400;
     }
 
     .contai_top {
       display: flex;
-      gap: 20px;
+      gap: 30px;
 
       .title {
         display: flex;
         flex-direction: column;
         gap: 20px;
         background-color: white;
-        padding: 30px;
+        padding: 45px;
         border-radius: 10px;
-        height: auto;
+        width: 60vh;
+        height: 42vh;
 
         .top_title {
           display: flex;
           align-items: center;
+          width: 100%;
           justify-content: space-between;
 
           h1 {
@@ -50,11 +48,13 @@
             gap: 5px;
             font-size: 20px;
             font-weight: 700;
+            font-family: "Lato", 700;
 
             span {
               font-size: 14px;
               color: #8181a5;
               font-weight: 400;
+              font-family: "Lato", 400;
             }
           }
 
@@ -70,6 +70,7 @@
               font-size: 12px;
               font-weight: 400;
               color: #8181a5;
+              font-family: "Lato", 400;
             }
           }
         }
@@ -78,21 +79,16 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 30px;
+          gap: 15px;
 
           .cart {
             display: flex;
             flex-direction: column;
             padding: 15px;
-            width: 23vw;
+            width: 100%;
             background-color: #f7f7f7;
             border-radius: 10px;
             gap: 5px;
-
-            @media (max-width: 1200px) {
-              width: 100%;
-              height: auto;
-            }
 
             input {
               border: none;
@@ -102,16 +98,20 @@
               outline: none;
               background-color: #f7f7f7;
               padding-bottom: 0;
+              width: 100%;
+              font-family: "Lato", 400;
             }
 
             .title_input {
               display: flex;
               align-items: center;
               justify-content: space-between;
+              width: 100%;
 
               p {
                 font-size: 14px;
                 font-weight: 700;
+                font-family: "Lato", 700;
               }
             }
           }
@@ -127,13 +127,9 @@
         background-color: white;
         padding: 30px;
         border-radius: 10px;
-        width: 100vw;
-        justify-content: space-between;
-
-        @media (max-width: 1200px) {
-          width: auto;
-          justify-content: space-between;
-        }
+        width: 100%;
+        gap: 30px;
+        height: 45.4vh;
 
         .input {
           display: flex;
@@ -142,7 +138,7 @@
           padding: 20px;
           border-radius: 10px;
           gap: 5px;
-          width: 23vw;
+          width: 80%;
 
           h2 {
             display: flex;
@@ -150,6 +146,7 @@
             font-size: 14px;
             font-weight: 700;
             justify-content: space-between;
+            font-family: "Lato", 700;
           }
 
           .cart {
@@ -160,7 +157,6 @@
               background-color: #ececec;
               outline: none;
               border: none;
-              padding-bottom: 25.5vw;
             }
           }
         }
@@ -168,7 +164,8 @@
         .calendar {
           display: flex;
           flex-direction: column;
-          width: 330px;
+          width: 50%;
+          gap: 11px;
 
           .top_calendar {
             background-color: #ececec;
@@ -177,7 +174,6 @@
             display: flex;
             gap: 5px;
             flex-direction: column;
-            margin-bottom: 6.5vw;
 
             h2 {
               font-size: 14px;
@@ -186,12 +182,14 @@
               display: flex;
               align-items: center;
               justify-content: space-between;
+              font-family: "Lato", 700;
             }
 
             span {
               font-size: 12px;
               color: #8181a5;
               font-weight: 400;
+              font-family: "Lato", 400;
             }
           }
 
@@ -206,6 +204,7 @@
               font-weight: 500;
               color: #181818;
               text-transform: capitalize;
+              font-family: "Lato", 500;
             }
 
             .contai_button {
@@ -233,6 +232,7 @@
               font-size: 12px;
               color: #a1a1b3;
               font-weight: 500;
+              font-family: "Lato", 500;
             }
           }
 
@@ -281,33 +281,20 @@
       align-items: center;
       justify-content: center;
       gap: 20px;
-      width: 84.5vw;
-
-      @media (max-width: 1500px) {
-        padding: 0;
-        width: 100%;
-      }
+      width: 100%;
 
       .bloc {
+        width: 100%;
+        height: 26vh;
         background-color: white;
         border-radius: 10px;
-        padding: 8vw 28.4vw;
         white-space: nowrap;
         display: flex;
         align-items: center;
         flex-direction: column;
         justify-content: center;
         color: #8181a5;
-
-        @media (max-width: 1500px) {
-          padding: 0;
-          width: 100%;
-          padding: 8vw 0;
-        }
-
-        @media (max-width: 500px) {
-          font-size: 10px;
-        }
+        margin-bottom: 10px;
       }
 
       button {
@@ -322,10 +309,7 @@
         border: solid 2px #c30000;
         color: #c30000;
         transition: 0.2s;
-
-        @media (max-width: 1500px) {
-          width: auto;
-        }
+        font-family: "Lato", 400;
 
         &:hover {
           background-color: #c30000;
@@ -333,147 +317,5 @@
         }
       }
     }
-  }
-}
-
-@media (max-width: 1500px) {
-  .Add_outLine {
-    .container {
-      width: 95vw;
-    }
-  }
-}
-
-@media (max-width: 1200px) {
-  .contai_top {
-    flex-direction: column;
-  }
-
-  .title,
-  .title_rght {
-    width: auto;
-  }
-
-  .calendar {
-    width: auto;
-  }
-}
-
-@media (max-width: 992px) {
-  .container {
-    padding: 20px;
-  }
-
-  .calendar {
-    width: auto;
-  }
-
-  .calendar .header h2 {
-    font-size: 20px;
-  }
-
-  .title_rght {
-    gap: 20px;
-  }
-
-  .contai_bottom {
-    width: auto;
-
-    button {
-      width: 30vw;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  a {
-    font-size: 14px;
-  }
-
-  .title {
-    padding: 20px;
-  }
-
-  .contai_input {
-    gap: 20px;
-  }
-
-  .calendar .header {
-    margin-bottom: 20px;
-  }
-
-  .calendar .header h2 {
-    font-size: 18px;
-  }
-
-  .calendar .days {
-    gap: 6px;
-  }
-
-  .title_rght .input .cart input {
-    padding-bottom: 40vw;
-  }
-
-  .contai_bottom {
-    .bloc {
-      padding: 20vw 10vw;
-      white-space: normal;
-      text-align: center;
-    }
-
-    button {
-      width: 60%;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 16px !important;
-  }
-
-  h2 {
-    font-size: 13px !important;
-  }
-
-  .calendar .day,
-  .calendar .empty {
-    height: 32px;
-    font-size: 12px;
-  }
-
-  .title_rght {
-    padding: 20px;
-  }
-
-  .title_rght .input {
-    padding: 15px;
-  }
-
-  .title_rght .input .cart input {
-    padding-bottom: 55vw;
-  }
-}
-
-@media (max-width: 360px) {
-  .container {
-    padding: 15px;
-  }
-
-  .title,
-  .title_rght {
-    padding: 15px;
-  }
-
-  .calendar .header h2 {
-    font-size: 16px;
-  }
-
-  .calendar .week span {
-    font-size: 10px;
-  }
-
-  .contai_bottom button {
-    width: auto;
   }
 }

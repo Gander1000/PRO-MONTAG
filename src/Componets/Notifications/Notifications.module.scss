@@ -2,35 +2,18 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  margin: 50px;
+  margin: 30px;
   width: 100%;
   gap: 30px;
-  padding-top: 50px;
+  padding: 30px 50px;
   border-radius: 10px;
-  height: auto;
-  min-height: 67.8vw;
-
-  @media (max-width: 1280px) {
-    height: 100vw;
-  }
-
-  @media (max-width: 850px) {
-    height: 150vw;
-  }
-
-  @media (max-width: 620px) {
-    height: 200vw;
-  }
-
-  @media (max-width: 480px) {
-    height: 250vw;
-  }
+  height: 86.8vh;
 
   h2 {
     font-size: 18px;
     font-weight: 700;
     color: #1c1d21;
-    padding: 0 50px;
+    font-family: "Lato", 700;
   }
 
   a {
@@ -41,7 +24,7 @@
       display: flex;
       align-items: center;
       gap: 30px;
-      padding: 10px 50px;
+      width: 100%;
 
       .red_title {
         display: flex;
@@ -52,10 +35,7 @@
           color: #c30000;
           font-size: 14px;
           font-weight: 700;
-
-          @media (max-width: 400px) {
-            font-size: 10px;
-          }
+          font-family: "Lato", 700;
         }
       }
 
@@ -63,36 +43,17 @@
         display: flex;
         flex-direction: column;
         gap: 5px;
+        width: 100%;
 
         .top {
           display: flex;
-          width: 75.5vw;
+          width: 100%;
           justify-content: space-between;
-
-          @media (max-width: 1310px) {
-            width: 60vw;
-          }
-
-          @media (max-width: 800px) {
-            width: 50vw;
-          }
-
-          @media (max-width: 600px) {
-            width: 40vw;
-          }
-
-          @media (max-width: 500px) {
-            display: flex;
-            gap: 10px;
-          }
 
           h3 {
             font-size: 14px;
             font-weight: 700;
-
-            @media (max-width: 400px) {
-              font-size: 10px;
-            }
+            font-family: "Lato", 700;
           }
         }
 
@@ -104,119 +65,17 @@
             font-size: 14px;
             font-weight: 400;
             color: #1c1d21;
-
-            @media (max-width: 400px) {
-              font-size: 10px;
-            }
+            font-family: "Lato", 400;
           }
 
           span {
             font-size: 14px;
             font-weight: 700;
             color: #61d0dc;
-
-            @media (max-width: 400px) {
-              font-size: 10px;
-            }
+            font-family: "Lato", 700;
           }
         }
       }
     }
-  }
-}
-
-@media (max-width: 1500px) {
-  .Notifications {
-    margin: 40px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .Notifications {
-    margin: 30px;
-  }
-}
-
-@media (max-width: 992px) {
-  .Notifications {
-    margin: 25px;
-  }
-
-  .Notifications a .cart {
-    gap: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .Notifications {
-    margin: 20px;
-    gap: 25px;
-    padding-top: 30px;
-    padding-bottom: 30vw;
-  }
-
-  .Notifications h2 {
-    padding: 0 30px;
-    font-size: 16px;
-  }
-
-  .Notifications a .cart {
-    padding: 10px 30px;
-  }
-
-  .Notifications a .cart .title .top {
-    width: auto;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-
-  .Notifications a .cart .title .bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-  }
-
-  .Notifications a .cart .red_title {
-    margin-top: 0;
-  }
-}
-
-@media (max-width: 576px) {
-  .Notifications {
-    margin: 15px;
-    gap: 20px;
-    padding-bottom: 90vw;
-  }
-
-  .Notifications h2 {
-    padding: 0 20px;
-    font-size: 15px;
-  }
-
-  .Notifications a .cart {
-    padding: 10px 20px;
-    gap: 15px;
-  }
-}
-
-@media (max-width: 360px) {
-  .Notifications {
-    margin: 10px;
-    padding-bottom: 100vw;
-  }
-
-  .Notifications h2 {
-    font-size: 14px;
-  }
-
-  .Notifications a .cart {
-    gap: 12px;
-  }
-
-  .Notifications a .cart .title h3,
-  .Notifications a .cart .title h4,
-  .Notifications a .cart .title span {
-    font-size: 13px;
   }
 }
