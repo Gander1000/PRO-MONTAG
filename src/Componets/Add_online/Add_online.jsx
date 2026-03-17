@@ -5,18 +5,42 @@ import { Link } from "react-router-dom";
 import Person from "../../assets/person-outline.svg";
 import Call from "../../assets/call-outline.svg";
 import Vector from "../../assets/Vector.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { ITEM } from "../../bd";
 
 function Add_outLine() {
-  const initialInputs = [
-    { label: "Тип заявки", type: "text", value: "Монтаж" },
-    { label: "Город", type: "text", value: "Г. Москва" },
-    { label: "Улица", type: "text", value: "ул. Спиридоновка" },
-    { label: "Дом", type: "text", value: "25/20с1" },
-  ];
+  const data = ITEM[0].addOnline;
+
+  
+  const lastUser = JSON.parse(localStorage.getItem("lastUser")) || {};
+
+  
+  const initialInputs = data.input.map((item, index) => {
+  
+    if (index === 0) return { ...item, value: lastUser.shopName || "" };
+    if (index === 1) return { ...item, value: lastUser.city || "" };
+    if (index === 2) return { ...item, value: lastUser.street || "" };
+    if (index === 3) return { ...item, value: lastUser.house || "" };
+    return item;
+  });
 
   const [inputs, setInputs] = useState(initialInputs);
   const [comment, setComment] = useState("");
+  const [selectedFiles, setSelectedFiles] = useState([]);
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+  const [currentDate, setCurrentDate] = useState(new Date());
+
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth();
+  const weekDays = data.weekDays;
+
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const firstDay = new Date(year, month, 1).getDay() || 7;
+  const days = [];
+  for (let i = 1; i < firstDay; i++) days.push(null);
+  for (let i = 1; i <= daysInMonth; i++) days.push(new Date(year, month, i));
+
 
   const handleInputChange = (index, e) => {
     const newInputs = [...inputs];
@@ -24,37 +48,45 @@ function Add_outLine() {
     setInputs(newInputs);
   };
 
-  const weekDays = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"];
-
-  const [currentDate, setCurrentDate] = useState(new Date());
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
-
-  const year = currentDate.getFullYear();
-  const month = currentDate.getMonth();
-
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-  const firstDay = new Date(year, month, 1).getDay() || 7;
-
-  const days = [];
-  for (let i = 1; i < firstDay; i++) days.push(null);
-  for (let i = 1; i <= daysInMonth; i++) {
-    days.push(new Date(year, month, i));
-  }
-
+  
   const handleDayClick = (date) => {
-    if (!startDate || endDate) {
+    if (!startDate || (startDate && endDate)) {
       setStartDate(date);
       setEndDate(null);
     } else if (date >= startDate) {
       setEndDate(date);
+    } else {
+      setStartDate(date);
+      setEndDate(null);
     }
   };
 
   const isInRange = (date) => {
-    if (!startDate || !endDate) return false;
-    return date >= startDate && date <= endDate;
+    if (startDate && !endDate)
+      return date.toDateString() === startDate.toDateString();
+    if (startDate && endDate) return date >= startDate && date <= endDate;
+    return false;
   };
+
+  const handleFolderSelect = (e) => {
+    const filesArray = Array.from(e.target.files);
+    const names = filesArray.map((f) => f.name);
+    setSelectedFiles((prev) => [...prev, ...names]);
+  };
+
+
+  useEffect(() => {
+    const updatedUser = JSON.parse(localStorage.getItem("lastUser")) || {};
+    setInputs(
+      data.input.map((item, index) => {
+        if (index === 0) return { ...item, value: updatedUser.shopName || "" };
+        if (index === 1) return { ...item, value: updatedUser.city || "" };
+        if (index === 2) return { ...item, value: updatedUser.street || "" };
+        if (index === 3) return { ...item, value: updatedUser.house || "" };
+        return item;
+      }),
+    );
+  }, []);
 
   return (
     <section className={scss.Add_outLine}>
@@ -67,16 +99,17 @@ function Add_outLine() {
           <div className={scss.title}>
             <div className={scss.top_title}>
               <h1>
-                АД00521250<span>Информация о заказе</span>
+                АД00521250
+                <span>Информация о заказе</span>
               </h1>
               <div className={scss.contai_p}>
                 <p>
                   <img src={Person} alt="" />
-                  Иванович Иван Иванов
+                  {data.client.name}
                 </p>
                 <p>
                   <img src={Call} alt="" />
-                  +7 (999) 999-99-99
+                  {data.client.phone}
                 </p>
               </div>
             </div>
@@ -93,7 +126,7 @@ function Add_outLine() {
                   </div>
                   <input
                     type={item.type}
-                    value={item.value}
+                    value={item.value || ""}
                     onChange={(e) => handleInputChange(index, e)}
                   />
                 </div>
@@ -104,8 +137,7 @@ function Add_outLine() {
           <div className={scss.title_rght}>
             <div className={scss.input}>
               <h2>
-                Комментарий
-                <img src={Vector} alt="" />
+                Комментарий <img src={Vector} alt="" />
               </h2>
               <div className={scss.cart}>
                 <input
@@ -120,11 +152,17 @@ function Add_outLine() {
             <div className={scss.calendar}>
               <div className={scss.top_calendar}>
                 <h2>
-                  Дата выполнения
-                  <img src={Vector} alt="" />
+                  Дата выполнения <img src={Vector} alt="" />
                 </h2>
-                <span>15.01.2026 - 22.01.2026</span>
+                <span>
+                  {startDate && endDate
+                    ? `${startDate.toLocaleDateString("ru-RU")} - ${endDate.toLocaleDateString("ru-RU")}`
+                    : startDate
+                      ? startDate.toLocaleDateString("ru-RU")
+                      : data.calendarRange}
+                </span>
               </div>
+
               <div className={scss.header}>
                 <h2>{currentDate.toLocaleString("ru", { month: "long" })}</h2>
                 <div className={scss.contai_button}>
@@ -153,14 +191,7 @@ function Add_outLine() {
                     <div
                       key={i}
                       onClick={() => handleDayClick(date)}
-                      className={`${scss.day}
-                        ${
-                          date.getDay() === 0 || date.getDay() === 6
-                            ? scss.weekend
-                            : ""
-                        }
-                        ${isInRange(date) ? scss.range : ""}
-                      `}
+                      className={`${scss.day} ${date.getDay() === 0 || date.getDay() === 6 ? scss.weekend : ""} ${isInRange(date) ? scss.range : ""}`}
                     >
                       {date.getDate()}
                     </div>
@@ -172,10 +203,35 @@ function Add_outLine() {
             </div>
           </div>
         </div>
+
         <div className={scss.contai_bottom}>
-          <div className={scss.bloc}>
-            <p>Добавьте файл загрузив по клику или перетащив его в область</p>
+          <div
+            className={scss.bloc}
+            onClick={() => document.getElementById("folderInput").click()}
+          >
+            <p>{data.fileText}</p>
           </div>
+
+          {selectedFiles.length > 0 && (
+            <div className={scss.selectedFiles}>
+              <ul>
+                {selectedFiles.map((name, i) => (
+                  <li key={i}>{name}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <input
+            type="file"
+            id="folderInput"
+            webkitdirectory=""
+            directory=""
+            multiple
+            style={{ display: "none" }}
+            onChange={handleFolderSelect}
+          />
+
           <button>Создать заявку</button>
         </div>
       </div>

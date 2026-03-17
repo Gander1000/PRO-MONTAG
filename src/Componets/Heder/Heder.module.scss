@@ -1,27 +1,137 @@
 .Heder {
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
-  align-items: center;
-  width: 45px;
-  height: 95.5vh;
-  padding: 20px;
-  border-right: 2px solid #f1f1f1;
-  position: relative;
-  background-color: white;
+  height: 100vh;
+
+  @media (max-width: 767px) {
+    height: auto;
+    width: 100%;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+    align-items: center;
+    width: 45px;
+    padding: 20px;
+    border-right: 2px solid #f1f1f1;
+    position: relative;
+    background-color: white;
+    height: 100%;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .mob_menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    height: 100%;
+    justify-content: space-between;
+    pointer-events: none;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    @media (max-width: 767px) {
+      display: flex;
+    }
+
+    & > .contai_top,
+    & > .contai_bottom {
+      pointer-events: auto;
+    }
+
+    .contai_top {
+      display: flex;
+      width: auto;
+      height: 10vh;
+      background-color: #ffffff;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      border-bottom: solid 1px rgb(172, 172, 172);
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+
+      @media (max-width: 767px) {
+        display: flex;
+      }
+
+      .logo {
+        width: 40px;
+      }
+
+      .contai_exit {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        img {
+          width: 30px;
+        }
+      }
+    }
+
+    .contai_bottom {
+      display: flex;
+      align-items: center;
+      width: auto;
+      background-color: #ffffff;
+      justify-content: space-between;
+      border-top: solid 1px rgb(172, 172, 172);
+      padding: 30px;
+
+      img {
+        width: 25px;
+      }
+    }
+  }
 
   .RestingContainer {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
-
     border: 2px solid transparent;
     box-sizing: border-box;
+  }
+
+  .badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transform: translate(50%, -50%);
+    background-color: #28a745; 
+    color: #28a745;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+
+    @media (max-width: 767px) {
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .RestingContainer.active {
+    border-color: #c30000;
   }
 
   .RestingContainer.active {

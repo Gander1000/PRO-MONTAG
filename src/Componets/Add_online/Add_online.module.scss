@@ -2,39 +2,59 @@
   display: flex;
   flex-direction: column;
   background-color: #ececec;
-  height: 100vh;
+  height: auto;
   width: 100%;
+
+  @media (max-width: 767px) {
+    margin: 75px 0px;
+  }
 
   .container {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 30px;
-    height: 100vh;
+    height: 100%;
+
+    @media (max-width: 1023px) {
+      overflow-y: auto;
+    }
 
     a {
       text-decoration: none;
       display: flex;
       align-items: center;
       gap: 5px;
-      font-size: 18px;
+      font-size: 15px;
       color: #566577;
-      font-family: "Lato", 400;
+      font-weight: 400;
+      font-family: "Lato", sans-serif;
+      white-space: nowrap;
+      width: 6%;
     }
 
     .contai_top {
       display: flex;
-      gap: 30px;
+      gap: 20px;
+
+      @media (max-width: 1023px) {
+        display: flex;
+        flex-direction: column;
+      }
 
       .title {
         display: flex;
         flex-direction: column;
         gap: 20px;
         background-color: white;
-        padding: 45px;
+        padding: 35px;
         border-radius: 10px;
         width: 60vh;
-        height: 42vh;
+        height: auto;
+
+        @media (max-width: 1023px) {
+          width: auto;
+        }
 
         .top_title {
           display: flex;
@@ -42,19 +62,25 @@
           width: 100%;
           justify-content: space-between;
 
+          @media (max-width: 767px) {
+            flex-direction: column;
+            align-items: start;
+            gap: 20px;
+          }
+
           h1 {
             display: flex;
             flex-direction: column;
             gap: 5px;
             font-size: 20px;
             font-weight: 700;
-            font-family: "Lato", 700;
+            font-family: "Lato", sans-serif;
 
             span {
               font-size: 14px;
               color: #8181a5;
               font-weight: 400;
-              font-family: "Lato", 400;
+              font-family: "Lato", sans-serif;
             }
           }
 
@@ -70,7 +96,7 @@
               font-size: 12px;
               font-weight: 400;
               color: #8181a5;
-              font-family: "Lato", 400;
+              font-family: "Lato", sans-serif;
             }
           }
         }
@@ -80,6 +106,7 @@
           flex-direction: column;
           align-items: center;
           gap: 15px;
+          height: auto;
 
           .cart {
             display: flex;
@@ -92,14 +119,14 @@
 
             input {
               border: none;
-              color: #8181a5;
+              color: black;
               font-size: 12px;
               font-weight: 400;
               outline: none;
               background-color: #f7f7f7;
               padding-bottom: 0;
               width: 100%;
-              font-family: "Lato", 400;
+              font-family: "Lato", sans-serif;
             }
 
             .title_input {
@@ -109,15 +136,16 @@
               width: 100%;
 
               p {
-                font-size: 14px;
-                font-weight: 700;
-                font-family: "Lato", 700;
+                font-size: 13px;
+                font-weight: 400;
+                color: #8181a5;
+                font-family: "Lato", sans-serif;
+
+                @media (max-width: 487px) {
+                  font-size: 10px;
+                }
               }
             }
-          }
-
-          .cart:first-child {
-            margin-bottom: 30px;
           }
         }
       }
@@ -125,11 +153,16 @@
       .title_rght {
         display: flex;
         background-color: white;
-        padding: 30px;
+        padding: 20px;
         border-radius: 10px;
         width: 100%;
-        gap: 30px;
-        height: 45.4vh;
+        gap: 20px;
+        height: auto;
+
+        @media (max-width: 1023px) {
+          flex-direction: column;
+          width: auto;
+        }
 
         .input {
           display: flex;
@@ -138,7 +171,12 @@
           padding: 20px;
           border-radius: 10px;
           gap: 5px;
-          width: 80%;
+          width: 50%;
+
+          @media (max-width: 1023px) {
+            width: auto;
+            height: 60px;
+          }
 
           h2 {
             display: flex;
@@ -146,7 +184,7 @@
             font-size: 14px;
             font-weight: 700;
             justify-content: space-between;
-            font-family: "Lato", 700;
+            font-family: "Lato", sans-serif;
           }
 
           .cart {
@@ -167,6 +205,11 @@
           width: 50%;
           gap: 11px;
 
+          @media (max-width: 1023px) {
+            width: auto;
+            gap: 20px;
+          }
+
           .top_calendar {
             background-color: #ececec;
             padding: 15px;
@@ -176,20 +219,20 @@
             flex-direction: column;
 
             h2 {
-              font-size: 14px;
+              font-size: 13px;
               color: #1c1d21;
               font-weight: 700;
               display: flex;
               align-items: center;
               justify-content: space-between;
-              font-family: "Lato", 700;
+              font-family: "Lato", sans-serif;
             }
 
             span {
               font-size: 12px;
               color: #8181a5;
               font-weight: 400;
-              font-family: "Lato", 400;
+              font-family: "Lato", sans-serif;
             }
           }
 
@@ -197,14 +240,14 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
 
             h2 {
-              font-size: 24px;
+              font-size: 20px;
               font-weight: 500;
               color: #181818;
               text-transform: capitalize;
-              font-family: "Lato", 500;
+              font-family: "Lato", sans-serif;
             }
 
             .contai_button {
@@ -232,7 +275,7 @@
               font-size: 12px;
               color: #a1a1b3;
               font-weight: 500;
-              font-family: "Lato", 500;
+              font-family: "Lato", sans-serif;
             }
           }
 
@@ -244,7 +287,7 @@
 
           .day,
           .empty {
-            height: 28.5px;
+            height: 30px;
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -258,14 +301,11 @@
             color: #1c1d21;
           }
 
-          .weekend {
-            color: #ff4d4f;
-          }
-
           .range {
-            background: #6ee7b7;
-            color: #0f5132;
+            background: lab(78.503% -64.9265 39.7492);
+            color: #ffffff;
             font-weight: 600;
+            font-family: "Lato", sans-serif;
           }
 
           .empty {
@@ -283,9 +323,22 @@
       gap: 20px;
       width: 100%;
 
+      .selectedFiles {
+        display: flex;
+        width: 100%;
+        height: auto;
+
+        ul {
+          list-style-type: none;
+          font-size: 14px;
+          font-weight: 400;
+          font-family: "Lato", sans-serif;
+        }
+      }
+
       .bloc {
         width: 100%;
-        height: 26vh;
+        padding: 25px 0;
         background-color: white;
         border-radius: 10px;
         white-space: nowrap;
@@ -295,6 +348,15 @@
         justify-content: center;
         color: #8181a5;
         margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: "Lato", sans-serif;
+        cursor: pointer;
+        border: 2px dashed #ccc;
+
+        @media (max-width: 527px) {
+          font-size: 10px;
+        }
       }
 
       button {
@@ -309,7 +371,12 @@
         border: solid 2px #c30000;
         color: #c30000;
         transition: 0.2s;
-        font-family: "Lato", 400;
+        font-family: "Lato", sans-serif;
+
+        @media (max-width: 1023px) {
+          width: auto;
+          margin-bottom: 30px;
+        }
 
         &:hover {
           background-color: #c30000;

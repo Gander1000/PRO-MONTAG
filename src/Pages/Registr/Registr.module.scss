@@ -4,16 +4,28 @@
   width: 100%;
   height: 100%;
 
+  @media (max-width: 1000px) {
+    padding: 30px;
+  }
+
   .contai_image {
     width: 50%;
     height: 100vh;
     overflow: hidden;
+
+    @media (max-width: 1000px) {
+      width: auto;
+    }
   }
 
   .Cor {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
 
   .contai_Title {
@@ -25,6 +37,10 @@
     position: relative;
     width: 50%;
     height: 100vh;
+
+    @media (max-width: 1000px) {
+      width: 100%;
+    }
 
     .Aftoris {
       display: flex;
@@ -55,7 +71,7 @@
     h2 {
       text-align: center;
       font-size: 32px;
-      font-family: "Montserrat", 900;
+      font-family: "Montserrat", sans-serif;
       color: #575757;
       font-style: Black;
       line-height: 100%;
@@ -85,6 +101,10 @@
         background-color: #f5f5fa66;
         padding: 20px;
         width: 20vw;
+
+        @media (max-width: 1000px) {
+          width: 40vw;
+        }
 
         input {
           padding-bottom: 10px;

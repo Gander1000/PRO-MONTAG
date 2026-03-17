@@ -1,12 +1,42 @@
 import scss from "./Aftoris.module.scss";
-import Logo from "../../assets/Group.svg";
 import Cor from "../../assets/minimalistskii-inter-er-koridora-s-derevannoi-skameikoi-i-zerkalom 1.svg";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Aftoris = () => {
-  const [emeil, setEleil] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [users, setUsers] = useState(() => {
+    const saved = localStorage.getItem("users");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    if (!email.trim() || !password.trim()) return;
+
+    
+    const user = users.find(
+      (u) => u.email === email && u.password === password,
+    );
+    if (!user) {
+      alert("Неверный логин или пароль");
+      return;
+    }
+
+    localStorage.setItem("lastUser", JSON.stringify(user)); 
+
+    setEmail("");
+    setPassword("");
+    navigate("/Home_Date/Profil_Date");
+  };
+
+  useEffect(() => {
+    localStorage.setItem("users", JSON.stringify(users));
+  }, [users]);
+
+  const isDisabled = !email.trim() || !password.trim();
 
   return (
     <section className={scss.Aftoris}>
@@ -15,17 +45,17 @@ const Aftoris = () => {
       </div>
       <div className={scss.contai_Title}>
         <div className={scss.Registr}>
-          <Link to="/Registr">Регистрация</Link>
+          <a href="/Registr">Регистрация</a>
         </div>
         <h2>
           Добро пожаловать в службу <br /> <span>сервиса PRO Монтаж.</span>
         </h2>
         <div className={scss.contai_input}>
           <p>Авторизация</p>
-          <div className={scss.contai_value}> 
+          <div className={scss.contai_value}>
             <input
-              value={emeil}
-              onChange={(e) => setEleil(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               type="email"
               placeholder="Логин"
             />
@@ -39,9 +69,16 @@ const Aftoris = () => {
             />
           </div>
         </div>
-        <Link to="/Home_Date/Profil_Date">
-          <button>Войти</button>
-        </Link>
+        <button
+          onClick={handleLogin}
+          disabled={isDisabled}
+          style={{
+            cursor: isDisabled ? "not-allowed" : "pointer",
+            opacity: isDisabled ? 0.5 : 1,
+          }}
+        >
+          Войти
+        </button>
       </div>
     </section>
   );

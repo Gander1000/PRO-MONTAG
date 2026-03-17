@@ -1,7 +1,19 @@
-.Home_Date{
-    display: flex;
-    padding: 0;
-    margin: 0;
-    background-color: #ececec;
-}
+.Home_Date {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  background-color: #ececec;
+  width: 100%;
+  height: 100vh;
 
+  @media (max-width: 1024px) {
+    height: auto;
+  }
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+}
