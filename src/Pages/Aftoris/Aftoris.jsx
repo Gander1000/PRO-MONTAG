@@ -1,7 +1,7 @@
 import scss from "./Aftoris.module.scss";
 import Cor from "../../assets/minimalistskii-inter-er-koridora-s-derevannoi-skameikoi-i-zerkalom 1.svg";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Aftoris = () => {
   const [email, setEmail] = useState("");
@@ -45,7 +45,7 @@ const Aftoris = () => {
       </div>
       <div className={scss.contai_Title}>
         <div className={scss.Registr}>
-          <a href="/Registr">Регистрация</a>
+          <Link to="/Registr">Регистрация</Link>
         </div>
         <h2>
           Добро пожаловать в службу <br /> <span>сервиса PRO Монтаж.</span>
