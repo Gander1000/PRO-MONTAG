@@ -5,9 +5,19 @@ import Call from "../../assets/call-outline.svg";
 import document from "../../assets/documents-outline.svg";
 import { Link } from "react-router-dom";
 import { ITEM } from "../../bd";
+import { useState, useRef } from "react";
 
 function Union_Profil() {
   const data = ITEM[0].unionProfil;
+
+  const [selectedFiles, setSelectedFiles] = useState([]);
+  const fileInputRef = useRef(null);
+
+  const handleFolderSelect = (e) => {
+    const filesArray = Array.from(e.target.files);
+    const names = filesArray.map((f) => f.name);
+    setSelectedFiles((prev) => [...prev, ...names]);
+  };
 
   return (
     <section className={scss.Union_Profil}>
@@ -130,9 +140,32 @@ function Union_Profil() {
             </div>
           </div>
 
-          <div className={scss.bottom_rght}>
+          <div
+            className={scss.bottom_rght}
+            onClick={() => fileInputRef.current.click()}
+          >
             <h1>{data.uploadText}</h1>
+
+            {selectedFiles.length > 0 && (
+              <div className={scss.selectedFiles}>
+                <ul>
+                  {selectedFiles.map((name, i) => (
+                    <li key={i}>{name}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
+
+          <input
+            type="file"
+            ref={fileInputRef}
+            webkitdirectory=""
+            directory=""
+            multiple
+            style={{ display: "none" }}
+            onChange={handleFolderSelect}
+          />
         </div>
       </div>
     </section>
